@@ -1,5 +1,10 @@
 nav {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
+    background-color: aquamarine;
+    width: 90vw;
+    border: 1px solid;
+    padding: 25px;
 }

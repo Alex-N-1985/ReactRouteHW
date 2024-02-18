@@ -3,3 +3,17 @@ h1 {
     color: black;
     text-align: center;
   }
+
+main {
+  width: 90vw;
+  border: 1px solid black;
+  padding: 25px;
+  background-color: bisque;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

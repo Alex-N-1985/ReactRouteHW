@@ -6,11 +6,12 @@ import "./NavMenu.css"
 
 const NavMenu = () => {
     return <nav>
+        <MenuItem title={"Home"} linkData={"/"}/>
         {progdata.letters.map((item, index) => 
             <MenuItem 
                 key = {index}
                 title = {item}
-                linkData = {item}
+                linkData = {`/words/${item}`}
             />
         )}
     </nav>
