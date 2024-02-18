@@ -1,0 +1,15 @@
+.emptysearch {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptysearch div {
+    font-size: 2rem;
+    font-weight: 600;
+    color: cadetblue;
+    text-align: center;
+    width: 100%;
+  }
