@@ -1,4 +1,4 @@
-.worddata-item {
+.worddata__item {
     display: flex;
     height: 40px;
     border: 1px solid black;
@@ -9,7 +9,7 @@
     justify-content: center
 }
 
-.worddata-item a {
+.worddata__item a {
     font-size: 1.2rem;
     font-weight: 700;
     color: gray;
