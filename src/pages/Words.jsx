@@ -6,7 +6,7 @@ import SearchRes from "../components/SearchRes/SearchRes";
 export const Words = () => {
     const { name } = useParams();
 
-    const wdata = progdata.words.filter(word => word[0] === name);
+    const wdata = progdata.words.filter(word => word.indexOf(name) >= 0);
 
     return <main>
         {
