@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import progdata from "../assets/datas/progdata.json";
 import addIcon from "../assets/images/add.svg";
 import okIcon from "../assets/images/ok.svg";
 import cancelItem from "../assets/images/cancel.svg";
+
+// import ProgData  from "../assets/datas/progdata.json";
 
 import WordData from "../components/WordData/WordData";
 
@@ -12,7 +14,9 @@ const Home = () =>{
     const [showPanel, setAddEditPanel] = useState(false);
     const [newWord, setNewWord] = useState("");
 
-    const words = progdata.words.sort();
+    // const words = ProgData.words;
+    const words = useSelector(state => state.words.data);
+    const dispatch = useDispatch();    
 
     const showAddEditPanel = () => { setAddEditPanel(true)}
 
@@ -39,7 +43,7 @@ const Home = () =>{
         </section>
         <section>
             {
-                words.map((item, index) => 
+                words.data.words.map((item, index) => 
                 <WordData 
                     key = {index}
                     value = {item}
