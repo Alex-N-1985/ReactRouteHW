@@ -1,13 +1,13 @@
 .worddata__edit {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .worddata__edit-tfield {
     display: block;
-    width: 60%;
-    height: 1.25rem;
+    width: 20rem;
+    height: 1.5rem;
     margin-right: 10px;
     border-radius: 15px;
     background-color: lightgray;
@@ -19,17 +19,12 @@
     justify-content: center;
     align-items: center;
     margin-left: 10px;
-    border-radius: 50%;
-    width: 12%;
-    height: 100%;
+    border-radius: 48%;
+    width: 3.5rem;
     cursor: pointer;
 }
 
 .worddata__edit-icon {
     width: 100%;
     margin: 2%;
-}
-
-.active {
-    display: flex;
 }
