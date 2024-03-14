@@ -5,22 +5,28 @@ import addIcon from "../assets/images/add.svg";
 import okIcon from "../assets/images/ok.svg";
 import cancelItem from "../assets/images/cancel.svg";
 
-// import ProgData  from "../assets/datas/progdata.json";
-
 import WordData from "../components/WordData/WordData";
+import { addWord } from "../store/Words";
 
 const Home = () =>{
     
     const [showPanel, setAddEditPanel] = useState(false);
     const [newWord, setNewWord] = useState("");
 
-    // const words = ProgData.words;
     const words = useSelector(state => state.words.data);
-    // const dispatch = useDispatch();    
+    const dispatch = useDispatch();    
 
     const showAddEditPanel = () => { setAddEditPanel(true)}
 
     const hideAddEditPanel = () => {
+        setAddEditPanel(false);
+        setNewWord("");
+    }
+
+    const addDoneHandler = ()=> {
+        const word = newWord;
+        console.log(word);
+        dispatch(addWord(word));
         setAddEditPanel(false);
         setNewWord("");
     }
@@ -30,8 +36,8 @@ const Home = () =>{
         <section className="editpanel"> 
             {showPanel && 
                 <div className="worddata__edit">
-                <input type="text" className="worddata__edit-tfield"/>
-                <button className="worddata__edit-button">
+                <input type="text" className="worddata__edit-tfield" onChange={(e) => setNewWord(e.target.value)} />
+                <button className="worddata__edit-button" onClick={addDoneHandler}>
                     <img className="worddata__edit-icon" src={okIcon} alt="" />
                 </button>
                 <button className="worddata__edit-button" onClick={hideAddEditPanel}>

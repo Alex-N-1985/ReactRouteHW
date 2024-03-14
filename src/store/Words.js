@@ -10,9 +10,21 @@ const initialState = {
 const wordSlise = createSlice({
     name: "words",
     initialState, 
-    reducers: {}
+    reducers: {
+        addWord(state, action){
+            const result = action.payload;
+            console.log(result);
+            const has = state.data.filter(el => el.toLowerCase() === result.toLowerCase());
+            if (!has.length) {
+                state.data.push(result);
+            }
+        },
+        delWord(state, action){
+            state.data = state.data.filter(el => el.toLowerCase() !== action.payload.toLowerCase());
+        }
+    }
 });
 
-
+export const { addWord, delWord } = wordSlise.actions
 
 export default wordSlise.reducer;
