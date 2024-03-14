@@ -1,0 +1,30 @@
+.worddata__edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.worddata__edit-tfield {
+    display: block;
+    width: 20rem;
+    height: 2rem;
+    margin-right: 10px;
+    border-radius: 15px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.worddata__edit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    border-radius: 10px;
+    width: 3.5rem;
+    cursor: pointer;
+}
+
+.worddata__edit-icon {
+    width: 100%;
+    margin: 2%;
+}
