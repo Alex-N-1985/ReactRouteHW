@@ -26,8 +26,7 @@ const wordSlise = createSlice({
 
         editWord(state, action) {
             const result = action.payload;
-            console.log(result);
-            state.data = state.data.filter(el => el.toLowerCase() !== result.prev.toLowerCase());
+            state.data = state.data.filter(el => el.toLowerCase() !== result.prev.toLowerCase());            
             state.data.push(result.value);
             state.data.sort();
         }
