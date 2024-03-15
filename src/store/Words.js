@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import ProgData from "../assets/datas/progdata.json";
 
 const initialState = {
-    data: ProgData.words
+    data: ProgData.words.sort()
 }
 
 const wordSlise = createSlice({
@@ -13,18 +13,27 @@ const wordSlise = createSlice({
     reducers: {
         addWord(state, action){
             const result = action.payload;
-            console.log(result);
             const has = state.data.filter(el => el.toLowerCase() === result.toLowerCase());
             if (!has.length) {
                 state.data.push(result);
+                state.data = state.data.sort();
             }
         },
+        
         delWord(state, action){
-            state.data = state.data.filter(el => el.toLowerCase() !== action.payload.toLowerCase());
+            state.data = state.data.filter(el => el.toLowerCase() !== action.payload.toLowerCase()).sort();
+        },
+
+        editWord(state, action) {
+            const result = action.payload;
+            console.log(result);
+            state.data = state.data.filter(el => el.toLowerCase() !== result.prev.toLowerCase());
+            state.data.push(result.value);
+            state.data.sort();
         }
     }
 });
 
-export const { addWord, delWord } = wordSlise.actions
+export const { addWord, delWord, editWord } = wordSlise.actions
 
 export default wordSlise.reducer;
