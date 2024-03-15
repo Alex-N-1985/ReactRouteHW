@@ -28,6 +28,8 @@ const WordData = ({value, linkData}) => {
     const editHandler = ({value, prev}) => {
         dispatch(editWord({value, prev}));
         setEditPanel(false);
+        setEditData(editData);
+        setPrevData(editData);
     }
 
     return <div className="worddata">
